@@ -26,7 +26,7 @@
    },
    "settings": {
       "leaveOnEmpty_Channel": {
-         "enabled": false,
+         "enabled": true,
          "time_delay": 30000
       },
       "LeaveOnEmpty_Queue": {

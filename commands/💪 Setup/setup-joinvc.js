@@ -102,7 +102,7 @@ module.exports = {
             menu?.deferUpdate();
             handle_the_picks(menu?.values[0], menuoptiondata)
           }
-          else menu?.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
@@ -173,7 +173,7 @@ module.exports = {
                   menu?.deferUpdate();
                   handle_the_picks2(menu?.values[0], menuoptiondata)
                 }
-                else menu?.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+                else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
               });
               //Once the Collections ended edit the menu message
               collector.on('end', collected => {
@@ -214,7 +214,7 @@ module.exports = {
                         a = client.joinvc.get(message.guild.id, "vcmessages")
                         if(a.map(d => d.channelId).includes(Voicechannel.id))
                           return message.reply({embeds: [new Discord.MessageEmbed()
-                            .setTitle(`<:no:833101993668771842> This Channel is already Setupped!`)
+                            .setTitle(`❌ This Channel is already Setupped!`)
                             .setDescription(`Remove it first with \`${prefix}setup-joinvc\` --> Then Pick VC Messages --> Then Pick Remove!`)
                             .setColor(es.color)
                             .setFooter(client.getFooter(es))
@@ -278,7 +278,7 @@ module.exports = {
                         a = client.joinvc.get(message.guild.id, "vcmessages")
                         if(!a.map(d => d.channelId).includes(Voicechannel.id))
                           return message.reply({embeds: [new Discord.MessageEmbed()
-                            .setTitle(`<:no:833101993668771842> This Channel has not been Setup yet!`)
+                            .setTitle(`❌ This Channel has not been Setup yet!`)
                             .setColor(es.color)
                             .setFooter(client.getFooter(es))
                           ]});
@@ -392,7 +392,7 @@ module.exports = {
                   menu?.deferUpdate();
                   handle_the_picks2(menu?.values[0], menuoptiondata)
                 }
-                else menu?.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+                else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
               });
               //Once the Collections ended edit the menu message
               collector.on('end', collected => {
@@ -439,7 +439,7 @@ module.exports = {
                         a = client.joinvc.get(message.guild.id, "vcroles")
                         if(a.map(d => d.channelId).includes(Voicechannel.id))
                           return message.reply({embeds: [new Discord.MessageEmbed()
-                            .setTitle(`<:no:833101993668771842> This Channel is already Setupped!`)
+                            .setTitle(`❌ This Channel is already Setupped!`)
                             .setDescription(`Remove it first with \`${prefix}setup-joinvc\` --> Then Pick VC ROLES --> Then Pick Remove!`)
                             .setColor(es.color)
                             .setFooter(client.getFooter(es))
@@ -501,7 +501,7 @@ module.exports = {
                         a = client.joinvc.get(message.guild.id, "vcroles")
                         if(!a.map(d => d.channelId).includes(Voicechannel.id))
                           return message.reply({embeds: [new Discord.MessageEmbed()
-                            .setTitle(`<:no:833101993668771842> This Channel has not been Setup yet!`)
+                            .setTitle(`❌ This Channel has not been Setup yet!`)
                             .setColor(es.color)
                             .setFooter(client.getFooter(es))
                           ]});

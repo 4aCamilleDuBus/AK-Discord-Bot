@@ -23,7 +23,7 @@ module.exports = {
       if(!message.guild.me.permissions.has([Permissions.FLAGS.MANAGE_NICKNAMES]))      
         return message.reply({embeds : [new MessageEmbed()
           .setColor(es.wrongcolor).setFooter(client.getFooter(es))
-          .setTitle(`<:no:833101993668771842> **I am missing the Permission to Manage Nicknames of others**`)
+          .setTitle(`❌ **I am missing the Permission to Manage Nicknames of others**`)
         ]})
       //databasing(client, message.guild.id, message.author.id);
       let adminroles = client.settings.get(message.guild.id, "adminroles")
@@ -53,14 +53,14 @@ module.exports = {
         return message.reply({embeds :[new MessageEmbed()
           .setColor(es.wrongcolor)
           .setFooter(client.getFooter(es))
-          .setTitle(`<:no:833101993668771842> **You forgot to ping a Member**`)
+          .setTitle(`❌ **You forgot to ping a Member**`)
           .setDescription(`Usage: \`${prefix}nickname @User newnickname\``)
         ]});
       if(!args[1])
         return message.reply({embeds :[new MessageEmbed()
           .setColor(es.wrongcolor)
           .setFooter(client.getFooter(es))
-          .setTitle(`<:no:833101993668771842> **You forgot to add a Nickname**`)
+          .setTitle(`❌ **You forgot to add a Nickname**`)
           .setDescription(`Usage: \`${prefix}nickname @User newnickname\``)
         ]});
       let nickname = args.slice(1).join(" ");
@@ -68,7 +68,7 @@ module.exports = {
         return message.reply({embeds :[new MessageEmbed()
           .setColor(es.wrongcolor)
           .setFooter(client.getFooter(es))
-          .setTitle(`<:no:833101993668771842> **The Nickname must have smaller then 32 Characters**`)
+          .setTitle(`❌ **The Nickname must have smaller then 32 Characters**`)
           .setDescription(`Usage: \`${prefix}nickname @User newnickname\``)
         ]});
       kickmember.setNickname(nickname).then(member => {

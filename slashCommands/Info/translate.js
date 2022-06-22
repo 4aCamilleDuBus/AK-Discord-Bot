@@ -23,7 +23,7 @@ module.exports = {
       translate(args.slice(2).join(" "), {from: args[0], to: args[1]}).then(res=>{
         let embed = new MessageEmbed()
         .setColor(es.color)
-        .setAuthor(handlemsg(client.la[ls].cmds.info.translate.to, { to: args[1] }), "https://imgur.com/0DQuCgg.png", "https://discord.gg/milrato")
+        .setAuthor(handlemsg(client.la[ls].cmds.info.translate.to, { to: args[1] }), "https://imgur.com/0DQuCgg.png", "https://discord.gg/milrdato")
         .setFooter(handlemsg(client.la[ls].cmds.info.translate.from, { from: args[0] }), member.user.displayAvatarURL({dynamic:true}))
         .setDescription(eval(client.la[ls]["cmds"]["info"]["translate"]["variable1"]))
         interaction?.reply({ephemeral: true, embeds: [embed]})

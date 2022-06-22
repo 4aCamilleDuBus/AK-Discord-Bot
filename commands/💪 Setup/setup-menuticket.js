@@ -93,7 +93,7 @@ module.exports = {
             theDB = client[`menuticket${SetupNumber}`]; //change to the right database
             second_layer(SetupNumber)
           } else menu?.reply({
-            content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+            content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`,
             ephemeral: true
           });
         });
@@ -102,7 +102,7 @@ module.exports = {
           menumsg.edit({
             embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
             components: [],
-            content: `<a:yes:833101995723194437> **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
+            content: `✔️  **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
           })
         });
       }
@@ -200,7 +200,7 @@ module.exports = {
             menu?.deferUpdate();
             handle_the_picks(menu?.values[0], menuoptiondata, SetupNumber)
           } else menu?.reply({
-            content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+            content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`,
             ephemeral: true
           });
         });
@@ -209,7 +209,7 @@ module.exports = {
           menumsg.edit({
             embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
             components: [],
-            content: `<a:yes:833101995723194437> **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
+            content: `✔️  **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
           })
         });
       }
@@ -294,7 +294,7 @@ module.exports = {
                   if (menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable3"]))
                   menuselection(menu)
                 } else menu?.reply({
-                  content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+                  content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`,
                   ephemeral: true
                 });
               });
@@ -303,7 +303,7 @@ module.exports = {
                 menumsg.edit({
                   embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
                   components: [],
-                  content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`
+                  content: `${collected && collected.first() && collected.first().values ? `✔️  **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`
                 })
               });
             }
@@ -386,7 +386,7 @@ module.exports = {
             let data = theDB.get(message.guild.id, "data");
             let settings = theDB.get(message.guild.id);
             if (!data || data.length < 1) {
-              return message.reply("<:no:833101993668771842> **You need to add at least 1 Open-Ticket-Option**")
+              return message.reply("❌ **You need to add at least 1 Open-Ticket-Option**")
             }
             let tempmsg = await message.reply({
               embeds: [
@@ -479,17 +479,17 @@ module.exports = {
                   message.reply(`Successfully Setupped the Menu-Ticket in <#${channel.id}>`)
                 });
               } else {
-                return message.reply("<:no:833101993668771842> **You did not ping a valid Channel!**")
+                return message.reply("❌ **You did not ping a valid Channel!**")
               }
             } else {
-              return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+              return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
             }
           }
           break;
           case "Add Ticket Option": {
             let data = theDB.get(message.guild.id, "data");
             if (data.length >= 25) {
-              return message.reply("<:no:833101993668771842> **You reached the limit of 25 different Options!** Remove another Option first!")
+              return message.reply("❌ **You reached the limit of 25 different Options!** Remove another Option first!")
             }
             //ask for value and description
             let tempmsg = await message.reply({
@@ -506,11 +506,11 @@ module.exports = {
               time: 90000, errors: ["time"]
             });
             if (collected && collected.first().content) {
-              if (!collected.first().content.includes("++")) return message.reply("<:no:833101993668771842> **Invalid Usage! Please mind the Usage and check the Example**")
+              if (!collected.first().content.includes("++")) return message.reply("❌ **Invalid Usage! Please mind the Usage and check the Example**")
               let value = collected.first().content.split("++")[0].trim().substr(0, 25);
               let index = data.findIndex(v => v.value == value);
               if(index >= 0) {
-                  return message.reply("<:no:833101993668771842> **Options can't have the SAME VALUE!** There is already an Option with that Value!");
+                  return message.reply("❌ **Options can't have the SAME VALUE!** There is already an Option with that Value!");
               }
               let description = collected.first().content.split("++")[1].trim().substr(0, 50);
               //ask for category
@@ -647,23 +647,23 @@ module.exports = {
 
                    
                   } else {
-                    return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+                    return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
                   }
                 } else {
-                  return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+                  return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
                 }
               } else {
-                return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+                return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
               }
             } else {
-              return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+              return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
             }
           }
           break;
           case "Edit Ticket Option": {
             let data = theDB.get(message.guild.id, "data");
             if (!data || data.length < 1) {
-              return message.reply("<:no:833101993668771842> **There are no Open-Ticket-Options to remove**")
+              return message.reply("❌ **There are no Open-Ticket-Options to remove**")
             }
             let embed = new MessageEmbed()
               .setColor(es.color)
@@ -743,11 +743,11 @@ module.exports = {
                   time: 90000, errors: ["time"]
                 });
                 if (collected && collected.first().content) {
-                  if (!collected.first().content.includes("++")) return message.reply("<:no:833101993668771842> **Invalid Usage! Please mind the Usage and check the Example**")
+                  if (!collected.first().content.includes("++")) return message.reply("❌ **Invalid Usage! Please mind the Usage and check the Example**")
                   let value = collected.first().content.split("++")[0].trim().substr(0, 25);
                   let index2 = data.findIndex(v => v.value == value);
                   if(index2 >= 0 && index != index2) {
-                      return message.reply("<:no:833101993668771842> **Options can't have the SAME VALUE!** There is already an Option with that Value!");
+                      return message.reply("❌ **Options can't have the SAME VALUE!** There is already an Option with that Value!");
                   }
                   let description = collected.first().content.split("++")[1].trim().substr(0, 50);
                   //ask for category
@@ -880,20 +880,20 @@ module.exports = {
                         }
                         
                       } else {
-                        return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+                        return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
                       }
                       
                     } else {
-                      return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+                      return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
                     }
                   } else {
-                    return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+                    return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
                   }
                 } else {
-                  return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+                  return message.reply("❌ **You did not enter a Valid Message in Time! CANCELLED!**")
                 }
               } else menu?.reply({
-                content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+                content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`,
                 ephemeral: true
               });
             });
@@ -902,7 +902,7 @@ module.exports = {
               menumsg.edit({
                 embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
                 components: [],
-                content: `<a:yes:833101995723194437> **Selected: \`${collected.size > 0 ? collected.first().values[0] : "NOTHING"}\`**`
+                content: `✔️  **Selected: \`${collected.size > 0 ? collected.first().values[0] : "NOTHING"}\`**`
               })
             });
           }
@@ -910,7 +910,7 @@ module.exports = {
           case "Remove Ticket Option": {
           let data = theDB.get(message.guild.id, "data");
           if (!data || data.length < 1) {
-            return message.reply("<:no:833101993668771842> **There are no Open-Ticket-Options to remove**")
+            return message.reply("❌ **There are no Open-Ticket-Options to remove**")
           }
           let embed = new MessageEmbed()
             .setColor(es.color)
@@ -979,7 +979,7 @@ module.exports = {
               theDB.set(message.guild.id, data, "data");
               message.reply(`**Successfully removed:**\n>>> ${menu?.values.map(i => `\`${i}\``).join(", ")}\n\nDon't forget to resend the Ticket Config-Message!`)
             } else menu?.reply({
-              content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+              content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`,
               ephemeral: true
             });
           });
@@ -988,7 +988,7 @@ module.exports = {
             menumsg.edit({
               embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
               components: [],
-              content: `<a:yes:833101995723194437> **Selected: \`${collected.first().values[0]}\`**`
+              content: `✔️  **Selected: \`${collected.first().values[0]}\`**`
             })
           });
         }

@@ -1,5 +1,5 @@
 /* Info
-👀 Bot Coded By: Ultimate Dev
+👀 Bot Coded By: CamiDuBus
 👀 Make Sure To Give Credits
 😎 Get Many Discrd Bots/Sources/Lavalinks & More.!
 ✨ Discord Server Link: https://discord.gg/Mfc5du5e3P
@@ -61,7 +61,7 @@ const client = new Discord.Client({
 /**********************************************************
  * @param {4} Create_the_client.memer property from Tomato's Api 
  *********************************************************/
-client.memer = new Meme(process.env.memer_api || config.memer_api); // GET a TOKEN HERE: https://discord.gg/Mc2FudJkgP
+client.memer = new Meme(process.env.memer_api || config.memer_api); // GET a TOKEN HERE: https://discord.gg/Mc2FudJP
 
 
 

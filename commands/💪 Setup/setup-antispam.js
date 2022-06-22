@@ -188,7 +188,7 @@ module.exports = {
             return message.reply({embeds: [new Discord.MessageEmbed()
               .setTitle("The Settings of the Anti Spam System")
               .setColor(es.color)
-              .setDescription(`**Enabled:** ${thesettings.enabled ? "<a:yes:833101995723194437>" : "<:no:833101993668771842>"}\n\n**Allowed Messages / 10 Seconds:** \`${thesettings.limit} Messages\``.substr(0, 2048))
+              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️" : "❌"}\n\n**Allowed Messages / 10 Seconds:** \`${thesettings.limit} Messages\``.substr(0, 2048))
               .setFooter(client.getFooter(es))]}
             );
           } break;

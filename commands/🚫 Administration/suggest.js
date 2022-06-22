@@ -48,8 +48,8 @@ module.exports = {
             client.settings.ensure(message.guild.id, {
               suggest: {
                 channel: "",
-                approvemsg: `<a:yes:833101995723194437> Accepted Idea! Expect this soon.`,
-                denymsg: `<:no:833101993668771842> Thank you for the feedback, but we are not interested in this idea at this time.`,
+                approvemsg: `✔️ Accepted Idea! Expect this soon.`,
+                denymsg: `❌ Thank you for the feedback, but we are not interested in this idea at this time.`,
                 maybemsg: `💡 We are thinking about this idea!`,
                 duplicatemsg: `💢 This is a duplicated Suggestion`,
                 soonmsg: `👌 Expect this Feature Soon!`,
@@ -196,13 +196,13 @@ module.exports = {
                 .setAuthor(oldEmbed.author.name, oldEmbed.author.iconURL)
                 .setDescription(oldEmbed.description)
                 .setColor(color)
-                .setFooter(client.getFooter(`Want to suggest something? Simply type it in this channel`, "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/light-bulb_1f4a1.png"))
+                .setFooter(client.getFooter(`Want to suggest something ? Simply type it in this channel`, "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/light-bulb_1f4a1.png"))
               
             if(embed.fields[2]){
-              embed.fields[2].name == `<:arrow:832598861813776394> __Reason by **${message.author.tag}**:__`;
+              embed.fields[2].name == `<832598861813776394> __Reason by **${message.author.tag}**:__`;
               embed.fields[2].value == `>>> ${String(reason).substr(0, 1000)}`;
             } else {
-              embed.addField(`<:arrow:832598861813776394> __Reason by **${message.author.tag}**__`, `>>> ${String(reason).substr(0, 1000)}`)
+              embed.addField(`<832598861813776394> __Reason by **${message.author.tag}**__`, `>>> ${String(reason).substr(0, 1000)}`)
             }
             targetMessage.edit({embeds: [embed]})
             try{
@@ -210,7 +210,7 @@ module.exports = {
               let member = message.guild.members.cache.get(SuggestionsData.user);
               if(!member) member = await message.guild.members.fetch(SuggestionsData.user).catch(() => {});
               if(member){
-                member.send({content: `Your Suggestion in **${message.guild.name}** got an Status Update!\n> https://discord.com/channels/${message.guild.id}/${channel.id}/${targetMessage.id}`,embeds: [embed]})
+                member.send({content: `Your Suggestion in **${message.guild.name}** got an Status Update !\n> https://discord.com/channels/${message.guild.id}/${channel.id}/${targetMessage.id}`,embeds: [embed]})
               }
             } catch (e){ console.log(String(e).grey) }
             if(client.settings.get(message.guild.id, `adminlog`) != "no"){

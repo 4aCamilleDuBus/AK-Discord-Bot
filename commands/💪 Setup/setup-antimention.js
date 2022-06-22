@@ -109,7 +109,7 @@ module.exports = {
             let SetupNumber = menu?.values[0].split(" ")[0]
             handle_the_picks(menuoptiondataIndex, SetupNumber, menuoptiondata)
           }
-          else menu?.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `❌ You are not allowed to do that ! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
@@ -187,7 +187,7 @@ module.exports = {
             return message.reply({embeds: [new Discord.MessageEmbed()
               .setTitle("The Settings of the Anti Mention System")
               .setColor(es.color)
-              .setDescription(`**Enabled:** ${thesettings.enabled ? "<a:yes:833101995723194437>" : "<:no:833101993668771842>"}\n\n**Allowed Mentions / Message:** \`${thesettings.limit} Pings\``.substr(0, 2048))
+              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️" : "❌"}\n\n**Allowed Mentions / Message:** \`${thesettings.limit} Pings\``.substr(0, 2048))
               .setFooter(client.getFooter(es))]}
             );
           } break;

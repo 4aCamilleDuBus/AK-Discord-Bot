@@ -53,8 +53,8 @@ module.exports = client => {
                     whitelistedchannels: [],
                     mute_amount: 2,
                     whitelistedlinks: [
-                        "discord.gg/milrato",
-                        "discord.gg/djs",
+                        "discord.gg/lingolsheim",
+                        "discord.gg/404",
                     ]
                 },
             });

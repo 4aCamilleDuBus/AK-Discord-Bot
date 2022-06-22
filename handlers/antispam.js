@@ -233,7 +233,7 @@ module.exports = client => {
                             .setColor(es.wrongcolor)
                             .setFooter(client.getFooter(es))
                             .setTitle(`${member.user.tag} You are not allowed to send more then ${messagelimit} Messages / 10 Seconds`)
-                            .setDescription(`Please slow down!`)
+                            .setDescription(`Please slow-down!`)
                         ]}).then(msg => setTimeout(()=>{msg.delete().catch(() => {})}, 3000)).catch(() => {});
                     }
                 }

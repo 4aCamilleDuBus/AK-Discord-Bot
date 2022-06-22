@@ -117,7 +117,7 @@ module.exports = client => {
                 }); //collector for 5 seconds
                 collector.on('collect', async b => {
                     if (b?.user.id !== user.id)
-                        return b?.reply(`<:no:833101993668771842> **Only the one who typed ${prefix}help is allowed to react!**`, true)
+                        return b?.reply(`❌ **Only the one who typed ${prefix}help is allowed to react!**`, true)
 
                     //page forward
                     if (b?.customId == "ticket_verify") {
@@ -236,7 +236,7 @@ module.exports = client => {
                     embeds: [new MessageEmbed()
                         .setColor(es.wrongcolor)
                         .setFooter(client.getFooter(es))
-                        .setTitle("<:no:833101993668771842> You are not allowed to delete this Ticket")
+                        .setTitle("❌ You are not allowed to delete this Ticket")
                         .setDescription(`${adminroles.length > 0 ? "You need one of those Roles: " + adminroles.map(role => `<@&${role}>`).join(" | ") + cmdrole.join(" | ") + theadminroles.join(" | ")  : `No Admin Roles Setupped yet! Do it with: \`${prefix}setup-admin\` You can also add Ticket only Roles with \`${prefix}setup-ticket\``}`)
                         .addField("Ticket Specific Role(s)/User(s):", `${ticketspecific.join(", ")}`.substr(0, 1024))
                     ]
@@ -256,7 +256,7 @@ module.exports = client => {
             }); //collector for 5 seconds
             collector.on('collect', async b => {
                 if (b?.user.id !== user.id)
-                    return b?.reply(`<:no:833101993668771842> **Only the one who typed ${prefix}help is allowed to react!**`, true)
+                    return b?.reply(`❌ **Only the one who typed ${prefix}help is allowed to react!**`, true)
 
 
                 //page forward
@@ -511,7 +511,7 @@ module.exports = client => {
                     embeds: [new MessageEmbed()
                         .setColor(es.wrongcolor)
                         .setFooter(client.getFooter(es))
-                        .setTitle("<:no:833101993668771842> You are not allowed to add/remove Users to/from this Ticket")
+                        .setTitle("❌ You are not allowed to add/remove Users to/from this Ticket")
                         .setDescription(`${adminroles.length > 0 ? "You need one of those Roles: " + adminroles.map(role => `<@&${role}>`).join(" | ") + cmdrole.join(" | ") + theadminroles.join(" | ")  : `No Admin Roles Setupped yet! Do it with: \`${prefix}setup-admin\` You can also add Ticket only Roles with \`${prefix}setup-ticket\``}`)
                     ]
                 });
@@ -704,7 +704,7 @@ module.exports = client => {
                     embeds: [new MessageEmbed()
                         .setColor(es.wrongcolor)
                         .setFooter(client.getFooter(es))
-                        .setTitle("<:no:833101993668771842> You are not allowed to add/remove Roles to/from this Ticket")
+                        .setTitle("❌ You are not allowed to add/remove Roles to/from this Ticket")
                         .setDescription(`${adminroles.length > 0 ? "You need one of those Roles: " + adminroles.map(role => `<@&${role}>`).join(" | ") + cmdrole.join(" | ") + theadminroles.join(" | ")  : `No Admin Roles Setupped yet! Do it with: \`${prefix}setup-admin\` You can also add Ticket only Roles with \`${prefix}setup-ticket\``}`)
                     ]
                 });
@@ -893,7 +893,7 @@ module.exports = client => {
                     embeds: [new MessageEmbed()
                         .setColor(es.wrongcolor)
                         .setFooter(client.getFooter(es))
-                        .setTitle("<:no:833101993668771842> You are not allowed to claim this Ticket")
+                        .setTitle("❌ You are not allowed to claim this Ticket")
                         .setDescription(`${adminroles.length > 0 ? "You need one of those Roles: " + adminroles.map(role => `<@&${role}>`).join(" | ") + cmdrole.join(" | ") + theadminroles.join(" | ")  : `No Admin Roles Setupped yet! Do it with: \`${prefix}setup-admin\` You can also add Ticket only Roles with \`${prefix}setup-ticket\``}`)
                     ]
                 });
@@ -986,7 +986,7 @@ module.exports = client => {
                       {
                         let data = client.setups.get(ticketchannel.id, "ticketdata");
                         if(data.state != "closed" && data.menutickettype == 1){
-                          return interaction?.reply({content: `<:no:833101993668771842> **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
+                          return interaction?.reply({content: `❌ **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
                         }
                       }
                     } catch {
@@ -1178,7 +1178,7 @@ module.exports = client => {
                         })
                     }
                 }
-                await interaction?.editReply({content: `<a:yes:833101995723194437> **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
+                await interaction?.editReply({content: `✔️ **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
                 })
             }
         }
@@ -1241,7 +1241,7 @@ module.exports = client => {
                       {
                         let data = client.setups.get(ticketchannel.id, "ticketdata");
                         if(data.state != "closed" && data.menutickettype == 2){
-                          return interaction?.reply({content: `<:no:833101993668771842> **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
+                          return interaction?.reply({content: `❌ **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
                         }
                       }
                     } catch {
@@ -1434,7 +1434,7 @@ module.exports = client => {
                         })
                     }
                 }
-                await interaction?.editReply({content: `<a:yes:833101995723194437> **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
+                await interaction?.editReply({content: `✔️ **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
                 })
             }
         }
@@ -1497,7 +1497,7 @@ module.exports = client => {
                       {
                         let data = client.setups.get(ticketchannel.id, "ticketdata");
                         if(data.state != "closed" && data.menutickettype == 3){
-                          return interaction?.reply({content: `<:no:833101993668771842> **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
+                          return interaction?.reply({content: `❌ **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
                         }
                       }
                     } catch {
@@ -1688,7 +1688,7 @@ module.exports = client => {
                         })
                     }
                 }
-                await interaction?.editReply({content: `<a:yes:833101995723194437> **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
+                await interaction?.editReply({content: `✔️ **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
                 })
             }
         }

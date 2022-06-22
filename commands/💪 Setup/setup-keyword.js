@@ -382,9 +382,9 @@ module.exports = {
                 if(string.length > 250) string = string.substr(0, 250) + " ..."
                 if(i > 13){
                   sendembed2 = true;
-                  embed2.addField(`<:arrow:832598861813776394> \`${cuc[i].name}\` | ${cuc[i].embed ? "✅ Embed" : "❌ Embed"}`, ">>> "+ string)
+                  embed2.addField(`<:flche_bleue:988483591824621648>  \`${cuc[i].name}\` | ${cuc[i].embed ? "✅ Embed" : "❌ Embed"}`, ">>> "+ string)
                 } else 
-                embed.addField(`<:arrow:832598861813776394> \`${cuc[i].name}\` | ${cuc[i].embed ? "✅ Embed" : "❌ Embed"}`, ">>> "+ string)
+                embed.addField(`<:flche_bleue:988483591824621648>  \`${cuc[i].name}\` | ${cuc[i].embed ? "✅ Embed" : "❌ Embed"}`, ">>> "+ string)
               }catch (e){
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
               }

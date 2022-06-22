@@ -37,14 +37,7 @@ module.exports = client => {
                         whitelistedchannels: [],
                         mute_amount: 2,
                         whitelistedlinks: [
-                            "giphy.com/gifs",
-                            "c.tenor.com",
-                            "tenor.com/view",
-                            "milrato.dev",
-                            "milrato.eu",
-                            "github?.com",
-                            "mozilla.org",
-                            "w3schools.com",
+                            "google.com",                           
                         ]
                     },
                 });
