@@ -213,7 +213,7 @@ class RPSGame {
 }
 module.exports = {
     name: "rockpaperscissors",
-    aliases: ["rpc"],
+    aliases: ["rps"],
     category: "🎮 MiniGames",
     description: "Allows you to play a Game of Rock Paper Scissors",
     usage: "rockpaperscissors --> Play the Game",

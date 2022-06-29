@@ -48,11 +48,11 @@ Link: https://discord.com/developers/applications/${client.user.id}
 Name: ${clientapp.name} 
 ${clientapp.owner.discriminator ? "Owner: " + clientapp.owner.tag : "Team: " + clientapp.owner.name + "\n |-> Members: " + clientapp.owner.members.map(uid=>`${uid.user.tag}`).join(", ")  + "\n |-> Team-Owner: " + `${guild.members.cache.get(clientapp.owner.ownerId) && guild.members.cache.get(clientapp.owner.ownerId).user ? guild.members.cache.get(clientapp.owner.ownerId).user.tag : clientapp.owner.ownerId }`} 
 Icon: ${clientapp.iconURL()}
-Bot-Public: ${clientapp.botPublic ? "✅": "❌"} (Invite able)
+Bot-Public: ${clientapp.botPublic ? "✅": "<:no:991003138108555284> "} (Invite able)
 \`\`\`
 > **About me:**
 \`\`\`yml
-${clientapp.description ? clientapp.description : "❌ NO DESCRIPTION YET!"}
+${clientapp.description ? clientapp.description : "<:no:991003138108555284>  NO DESCRIPTION YET!"}
 \`\`\``
 : ""}
 `})

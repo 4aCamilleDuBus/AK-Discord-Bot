@@ -82,7 +82,7 @@ module.exports = {
         //define the embed
         let MenuEmbed = new Discord.MessageEmbed()
           .setColor(es.color)
-          .setAuthor('Join VC System', 'https://cdn.discordapp.com/emojis/834052497492410388.gif?size=96', 'https://discord.gg/milrato')
+          .setAuthor('Join VC System', 'https://cdn.discordapp.com/emojis/834052497492410388.gif?size=96', 'https://discord.gg/lingolsheim')
           .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable2"]))
           .addField("Send Message in a Channel", `If a User joins a specific Channel, it will send a define able Message (e.g. Ping for Role(s)) in a defined Channel.\nThis is useful if you have a Waitingroomchannel, and it's needed to check if a user joins it or not with pings!\n*After leaving the Channel, the sent message get's edited and removes the ping*`)
           .addField("Add / Remove Role", `If a User joins a VC he/she will get a specific Role, this Role will get removed again, if he/she leaves the vc again!`)        
@@ -106,7 +106,7 @@ module.exports = {
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:991003236276260894> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
         });
       }
       async function handle_the_picks(optionhandletype, menuoptiondata) {
@@ -155,7 +155,7 @@ module.exports = {
               //define the embed
               let MenuEmbed = new Discord.MessageEmbed()
                 .setColor(es.color)
-                .setAuthor('Join VC System', 'https://cdn.discordapp.com/emojis/834052497492410388.gif?size=96', 'https://discord.gg/milrato')
+                .setAuthor('Join VC System', 'https://cdn.discordapp.com/emojis/834052497492410388.gif?size=96', 'https://discord.gg/lingolsheim')
                 .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable2"]))
               //send the menu msg
               let menumsg = await message.reply({embeds: [MenuEmbed], components: [new MessageActionRow().addComponents(Selection)]})
@@ -177,7 +177,7 @@ module.exports = {
               });
               //Once the Collections ended edit the menu message
               collector.on('end', collected => {
-                menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+                menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:991003236276260894> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
               });
             }
             async function handle_the_picks2(optionhandletype, menuoptiondata) {
@@ -223,7 +223,7 @@ module.exports = {
                        
                         client.joinvc.push(message.guild.id, { channelId: Voicechannel.id, textChannelId: Textchannel.id, message: args.join(" ") }, "vcmessages")
                         return message.reply({embeds: [new Discord.MessageEmbed()
-                          .setTitle(`<a:yes:833101995723194437> I will now send Messages after someone joins the VC \`${Voicechannel.name}\` in the TextChannel **${Textchannel.name}**`)
+                          .setTitle(`<a:yes:991003236276260894> I will now send Messages after someone joins the VC \`${Voicechannel.name}\` in the TextChannel **${Textchannel.name}**`)
                           .setColor(es.color)
                           .setFooter(client.getFooter(es))
                         ]});
@@ -284,7 +284,7 @@ module.exports = {
                           ]});
                         client.joinvc.remove(message.guild.id, d => d.channelId == Voicechannel.id, "vcmessages")
                         return message.reply({embeds: [new Discord.MessageEmbed()
-                          .setTitle(`<a:yes:833101995723194437> Successfully removed **${Voicechannel.name}** out of the Setup!`)
+                          .setTitle(`<a:yes:991003236276260894> Successfully removed **${Voicechannel.name}** out of the Setup!`)
                           .setColor(es.color)
                           .setFooter(client.getFooter(es))
                         ]});
@@ -374,7 +374,7 @@ module.exports = {
               //define the embed
               let MenuEmbed = new Discord.MessageEmbed()
                 .setColor(es.color)
-                .setAuthor('Join VC System', 'https://cdn.discordapp.com/emojis/834052497492410388.gif?size=96', 'https://discord.gg/milrato')
+                .setAuthor('Join VC System', 'https://cdn.discordapp.com/emojis/834052497492410388.gif?size=96', 'https://discord.gg/lingolsheim')
                 .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable2"]))
               //send the menu msg
               let menumsg = await message.reply({embeds: [MenuEmbed], components: [new MessageActionRow().addComponents(Selection)]})
@@ -396,7 +396,7 @@ module.exports = {
               });
               //Once the Collections ended edit the menu message
               collector.on('end', collected => {
-                menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+                menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:991003236276260894> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
               });
             }
             async function handle_the_picks2(optionhandletype, menuoptiondata) {
@@ -446,7 +446,7 @@ module.exports = {
                           ]});
                         client.joinvc.push(message.guild.id, { channelId: Voicechannel.id, roleId: Role.id }, "vcroles")
                         return message.reply({embeds: [new Discord.MessageEmbed()
-                          .setTitle(`<a:yes:833101995723194437> I will now Add the Role \`${Role.name}\` when someone joins the VC **${Discord.VoiceChannel.name}**`)
+                          .setTitle(`<a:yes:991003236276260894> I will now Add the Role \`${Role.name}\` when someone joins the VC **${Discord.VoiceChannel.name}**`)
                           .setColor(es.color)
                           .setFooter(client.getFooter(es))
                         ]});
@@ -507,7 +507,7 @@ module.exports = {
                           ]});
                         client.joinvc.remove(message.guild.id, d => d.channelId == Voicechannel.id, "vcroles")
                         return message.reply({embeds: [new Discord.MessageEmbed()
-                          .setTitle(`<a:yes:833101995723194437> Successfully removed **${Voicechannel.name}** out of the Setup!`)
+                          .setTitle(`<a:yes:991003236276260894> Successfully removed **${Voicechannel.name}** out of the Setup!`)
                           .setColor(es.color)
                           .setFooter(client.getFooter(es))
                         ]});
@@ -569,7 +569,7 @@ module.exports = {
 };
 /**
  * @INFO
- * Bot Coded by Tomato#6966 | https://discord.gg/milrato
+ * Bot Coded by Tomato#6966 | https://discord.gg/lingolsheim
  * @INFO
  * Work for Milrato Development | https://milrato.eu
  * @INFO

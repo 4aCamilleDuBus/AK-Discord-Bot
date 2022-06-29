@@ -11,7 +11,7 @@ var {
 module.exports = {
   name: "setup-antinuke",
   category: "💪 Setup",
-  aliases: ["setupantinuke", "antinuke-setup", "antinukesetup", "antinukesystem"],
+  aliases: ["setupantinuke", "setup-antiraid", "antiraid", "antinukesystem"],
   cooldown: 5,
   usage: "setup-antinuke --> Follow Steps",
   description: "Manage the Anti Nuke System",
@@ -19,7 +19,7 @@ module.exports = {
   type: "security",
   run: async (client, message, args, cmduser, text, prefix) => {
     let es = client.settings.get(message.guild.id, "embed");let ls = client.settings.get(message.guild.id, "language");
-    //only allow the Server owner, (&Tomato) to execute this Command, (Tomato just because if he needs to help for Shop Bots)
+    //only allow the Server owner, (Camille) to execute this Command
     if(message.author.id != message.guild.ownerId){
       if(message.author.id != "973907165486133248")
         return message.reply({content: eval(client.la[ls]["cmds"]["setup"]["setup-antinuke"]["variable1"])})
@@ -297,7 +297,7 @@ module.exports = {
         //define the embed
         let MenuEmbed = new Discord.MessageEmbed()
         .setColor(es.color)
-        .setAuthor('Anti Nuke Setup', 'https://cdn.discordapp.com/attachments/820695790170275871/869657327941324860/PS7lwz7HwAAAABJRU5ErkJggg.png', 'https://discord.gg/milfrato')
+        .setAuthor('Anti-raid Setup', 'https://cdn.discordapp.com/attachments/820695790170275871/869657327941324860/PS7lwz7HwAAAABJRU5ErkJggg.png', 'https://discord.gg/milfrato')
         .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-antinuke"]["variable3"]))
         let used1 = false;
         //send the menu msg
@@ -900,11 +900,11 @@ module.exports = {
                 collector.stop();
                 menuselection2(menu);
               }
-              else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+              else menu?.reply({content: `<:no:991003138108555284> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
             });
             //Once the Collections ended edit the menu message
             collector.on('end', collected => {
-              menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `✔️ **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+              menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `✔️ **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "<:no:991003138108555284> **NOTHING SELECTED - CANCELLED**" }`})
             });
           
         
@@ -1230,7 +1230,7 @@ module.exports = {
                       client.on('interactionCreate',  (menu) => {
                         if (menu?.message.id === menumsg.id) {
                           if (menu?.user.id === cmduser.id) {
-                            if(used33) return menu?.reply({content: `❌ You already selected something, this Selection is now disabled!`, ephemeral: true})
+                            if(used33) return menu?.reply({content: `<:no:991003138108555284> You already selected something, this Selection is now disabled!`, ephemeral: true})
                             let menuoptiondata = menuoptions.find(v => v.value == menu?.values[0])
                             let menuoptionindex = menuoptions.findIndex(v => v.value == menu?.values[0])
                             if(menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-warn"]["variable3"]))
@@ -1238,7 +1238,7 @@ module.exports = {
                             used33 = true;
                             handle_the_picks_X(menuoptionindex, menuoptiondata)
                           }
-                          else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+                          else menu?.reply({content: `<:no:991003138108555284> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
                         }
                       });
                     }
@@ -1306,11 +1306,11 @@ module.exports = {
                   collector.stop();
                   menuselection3(menu);
                 }
-                else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+                else menu?.reply({content: `<:no:991003138108555284> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
               });
               //Once the Collections ended edit the menu message
               collector.on('end', collected => {
-                menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `✔️ **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+                menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `✔️ **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "<:no:991003138108555284> **NOTHING SELECTED - CANCELLED**" }`})
               });
             
           } 
@@ -1567,11 +1567,11 @@ module.exports = {
             collector.stop();
             menuselection(menu);
           }
-          else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `<:no:991003138108555284> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `✔️ **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `✔️ **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "<:no:991003138108555284> **NOTHING SELECTED - CANCELLED**" }`})
         });
       }
 

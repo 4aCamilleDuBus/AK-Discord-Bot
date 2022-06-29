@@ -28,7 +28,7 @@ module.exports = {
       let tempmsg;
       
       //function to handle true/false
-      const d2p = (bool) => bool ? "`✔️ Enabled`" : "`❌ Disabled`"; 
+      const d2p = (bool) => bool ? "`✔️ Enabled`" : "`<:no:991003138108555284>  Disabled`"; 
       //call the first layer
       first_layer()
 
@@ -114,11 +114,11 @@ module.exports = {
             menu?.deferUpdate(); used1 = true;
             handle_the_picks(menuoptionindex, menuoptiondata)
           }
-          else menu?.reply({content: `❌ You are not allowed to do that ! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `<:no:991003138108555284>  You are not allowed to do that ! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "<:no:991003138108555284>  **NOTHING SELECTED - CANCELLED**" }`})
         });
       }
 
@@ -139,7 +139,7 @@ module.exports = {
             return message.reply({embeds: [new Discord.MessageEmbed()
               .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-antidiscord"]["variable4"]))
               .setColor(es.color)
-              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️ " : "❌"}\n\n**Witelisted Channels:** ${thesettings.whitelistedchannels.length > 0 ? `<#${thesettings.whitelistedchannels.join("> | <#")}>` : "No Channels Whitelisted!"}\n\n**Information:** *Anti Discord are not enabled in Tickets from THIS BOT*`.substr(0, 2048))
+              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️ " : "<:no:991003138108555284> "}\n\n**Witelisted Channels:** ${thesettings.whitelistedchannels.length > 0 ? `<#${thesettings.whitelistedchannels.join("> | <#")}>` : "No Channels Whitelisted!"}\n\n**Information:** *Anti Discord are not enabled in Tickets from THIS BOT*`.substr(0, 2048))
               .addField("**Whitelisted Links**", `${thesettings.whitelistedlinks.lenght > 0 ? thesettings.whitelistedlinks.join("\n").substr(0, 1024): "No Links allowed!"}`)
               .setFooter(client.getFooter(es))
             ]});

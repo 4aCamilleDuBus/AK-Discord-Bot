@@ -58,40 +58,34 @@ module.exports = {
           let embeds = allotherembeds_eachcategory();
           if (cat == "🔰 Info")
             return message.reply({ embeds: [embeds[0]] })
-          if (cat == "💸 Economy")
-            return message.reply({ embeds: [embeds[1]] })
           if (cat == "🏫 School Commands")
-            return message.reply({ embeds: [embeds[2]] })
+            return message.reply({ embeds: [embeds[1]] })
           if (cat == "🎶 Music")
-            return message.reply({ embeds: [embeds[3]] })
+            return message.reply({ embeds: [embeds[2]] })
           if (cat == "👀 Filter")
-            return message.reply({ embeds: [embeds[4]] })
+            return message.reply({ embeds: [embeds[3]] })
           if (cat == "⚜️ Custom Queue(s)")
-            return message.reply({ embeds: [embeds[5]] })
+            return message.reply({ embeds: [embeds[4]] })
           if (cat == "🚫 Administration")
-            return message.reply({ embeds: [embeds[6]] })
+            return message.reply({ embeds: [embeds[5]] })
           if (cat == "💪 Setup")
-            return message.reply({ embeds: [embeds[7]] })
+            return message.reply({ embeds: [embeds[6]] })
           if (cat == "⚙️ Settings")
-            return message.reply({ embeds: [embeds[8]] })
+            return message.reply({ embeds: [embeds[7]] })
           if (cat == "👑 Owner")
-            return message.reply({ embeds: [embeds[9]] })
-          if (cat == "⌨️ Programming")
-            return message.reply({ embeds: [embeds[10]] })
+            return message.reply({ embeds: [embeds[8]] })
           if (cat == "📈 Ranking")
-            return message.reply({ embeds: [embeds[11]] })
+            return message.reply({ embeds: [embeds[9]] })
           if (cat == "🔊 Soundboard")
-            return message.reply({ embeds: [embeds[12]] })
+            return message.reply({ embeds: [embeds[10]] })
           if (cat == "🎤 Voice")
-            return message.reply({ embeds: [embeds[13]] })
-          if (cat == "🕹️ Fun")
-            return message.reply({ embeds: [embeds[14]] })
+            return message.reply({ embeds: [embeds[11]] })
           if (cat == "🎮 MiniGames")
-            return message.reply({ embeds: [embeds[15]] })
-          if (cat == "😳 Anime-Emotions")
-            return message.reply({ embeds: [embeds[16]] })
+            return message.reply({ embeds: [embeds[12]] })
+          if (cat == "😳 Fun")
+            return message.reply({ embeds: [embeds[13]] })
           if (cat == "🔞 NSFW")
-            return message.reply({ embeds: [embeds[17]] })
+            return message.reply({ embeds: [embeds[14]] })
           if (category.toLowerCase().includes("custom")) {
             const cmd = client.commands.get(items[0].split("`").join("").toLowerCase()) || client.commands.get(client.aliases.get(items[0].split("`").join("").toLowerCase()));
             try {
@@ -132,12 +126,6 @@ module.exports = {
             value: "Information",
             emoji: "🔰"
            // description: "Commands to share Information"
-          },
-          {
-            label: "Economy",
-            value: "Economy",
-            emoji: "💸"
-           // description: "Commands to use the Economy System"
           },
           {
             label: "School",
@@ -188,12 +176,6 @@ module.exports = {
            // description: "Commands to to manage the Bot"
           },
           {
-            label: "Programming",
-            value: "Programming",
-            emoji: "⌨️"
-          //  description: "Commands useful for Programming"
-          },
-          {
             label: "Ranking",
             value: "Ranking",
             emoji: "📈"
@@ -212,19 +194,13 @@ module.exports = {
            // description: "Commands for Voice Channels Management"
           },
           {
-            label: "Fun",
-            value: "Fun",
-            emoji: "🕹️"
-           // description: "Commands for Fun (Image) uses"
-          },
-          {
             label: "Minigames",
             value: "Minigames",
             emoji: "🎮"
            // description: "Commands for Minigames with the Bot"
           },
           {
-            label: "Anime-Emotions",
+            label: "Fun",
             value: "Anime-Emotions",
             emoji: "😳"
            // description: "Commands to show your Emotions with Anime style"
@@ -259,7 +235,7 @@ module.exports = {
           .setCustomId("MenuSelection")
           .setPlaceholder(`Select`)
           .setMinValues(1)
-          .setMaxValues(3)
+          .setMaxValues(5)
           .addOptions(menuOptions.filter(Boolean))
         let buttonRow = new MessageActionRow().addComponents([button_back, button_home, button_forward])
         let SelectionRow = new MessageActionRow().addComponents([menuSelection])
@@ -267,7 +243,7 @@ module.exports = {
         //define default embed
         let OverviewEmbed = new MessageEmbed()
           .setColor(es.color)
-.setDescription(`<:flche_bleue:985990518649532437> Use Buttons to Swap Pages`)        
+.setDescription(`<:flche_bleue:985990518649532437> Hey, to see the available commands, use the buttons or the drop-down menu!`)        
         let err = false;
         //Send message with buttons
         let helpmsg = await message.reply({
@@ -333,24 +309,20 @@ module.exports = {
                 switch (value.toLowerCase()) {
                   case "overview": index = 0; break;
                   case "information": index = 1; break;
-                  case "economy": index = 2; break;
-                  case "school": index = 3; break;
-                  case "music": index = 4; break;
-                  case "filter": index = 5; break;
-                  case "customqueue": index = 6; break;
-                  case "admin": index = 7; break;
-                  case "setup": index = 8; break;
-                  case "settings": index = 9; break;
-                  case "owner": index = 10; break;
-                  case "programming": index = 11; break;
-                  case "ranking": index = 12; break;
-                  case "soundboard": index = 13; break;
-                  case "voice": index = 14; break;
-                  case "fun": index = 15; break;
-                  case "minigames": index = 16; break;
-                  case "anime-emotions": index = 17; break;
-                  case "nsfw": index = 18; break;
-                  case "customcommand": index = 19; break;
+                  case "school": index = 2; break;
+                  case "music": index = 3; break;
+                  case "filter": index = 4; break;
+                  case "customqueue": index = 5; break;
+                  case "admin": index = 6; break;
+                  case "setup": index = 7; break;
+                  case "settings": index = 8; break;
+                  case "owner": index = 9; break;
+                  case "ranking": index = 10; break;
+                  case "soundboard": index = 11; break;
+                  case "voice": index = 12; break;                                case "minigames": index = 16; break;
+                  case "anime-emotions": index = 13; break;
+                  case "nsfw": index = 14; break;
+                  case "customcommand": index = 15; break;
                 }
                 vembeds.push(theembeds[index])
               }
@@ -390,16 +362,6 @@ module.exports = {
           .addField(`🤖 **Bot Related Commands**`, ">>> " + client.commands.filter((cmd) => cmd.category === "🔰 Info" && cmd.type === "bot").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
           .addField(`🌺 **Util Related Commands**`, ">>> " + client.commands.filter((cmd) => cmd.category === "🔰 Info" && cmd.type === "util").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
         embeds.push(embed0)
-
-        //ECONOMY COMMANDS
-        var embed1 = new MessageEmbed()
-          .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "💸 Economy").size}\`] 💸 Economy Commands 💸 | ${settings.ECONOMY ? "ENABLED" : "DISABLED"}`)
-          .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "💸 Economy").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
-          .addField("\u200b", "**Sub-Categorized Commands:**")
-          .addField(`🕹️ **Mini Game to earn 💸**`, ">>> " + client.commands.filter((cmd) => cmd.category === "💸 Economy" && cmd.type === "game").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-          .addField(`**Repeatingly earn 💸 via Event(s)**`, ">>> " + client.commands.filter((cmd) => cmd.category === "💸 Economy" && cmd.type === "earn").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-          .addField(`🍢 **Information & Manage**`, ">>> " + client.commands.filter((cmd) => cmd.category === "💸 Economy" && cmd.type === "info").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-        if (!filterdisabled || settings.ECONOMY || settings.showdisabled) embeds.push(embed1)
 
         //SCHOOL COMMANDS
         var embed2 = new MessageEmbed()
@@ -463,7 +425,7 @@ module.exports = {
           .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "⚙️ Settings").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
           .addField("\u200b", "__**Sub-Categorized Commands:**__")
           .addField("🙂 **User Related Commands**", "> " + client.commands.filter((cmd) => cmd.category === "⚙️ Settings" && cmd.type.includes("user")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-          .addField("<:Bot_Flag:835928340715012137> **Bot Related Commands**", "> " + client.commands.filter((cmd) => cmd.category === "⚙️ Settings" && cmd.type.includes("bot")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
+          .addField(" **Bot Related Commands**", "> " + client.commands.filter((cmd) => cmd.category === "⚙️ Settings" && cmd.type.includes("bot")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
           .addField("🎶 **Music Related Commands**", "> " + client.commands.filter((cmd) => cmd.category === "⚙️ Settings" && cmd.type.includes("music")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
         embeds.push(embed8)
 
@@ -472,22 +434,16 @@ module.exports = {
           .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "👑 Owner").size}\`] 👑 Owner Commands 👑`)
           .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "👑 Owner").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
           .addField("\u200b", "__**Sub-Categorized Commands:**__")
-          .addField("<:Discord:787321652345438228> **Information & Manage**", "> " + client.commands.filter((cmd) => cmd.category === "👑 Owner" && cmd.type.includes("info")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-          .addField("<:Bot_Flag:835928340715012137> **Adjust the Bot**", "> " + client.commands.filter((cmd) => cmd.category === "👑 Owner" && cmd.type.includes("bot")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
+          .addField("**Information & Manage**", "> " + client.commands.filter((cmd) => cmd.category === "👑 Owner" && cmd.type.includes("info")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
+          .addField("**Adjust the Bot**", "> " + client.commands.filter((cmd) => cmd.category === "👑 Owner" && cmd.type.includes("bot")).sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
         embeds.push(embed9)
-
-        //Programming Commands
-        var embed10 = new MessageEmbed()
-          .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "⌨️ Programming").size}\`] ⌨️ Programming Commands ⌨️ | ${settings.PROGRAMMING ? "✔️  ENABLED" : "❌ DISABLED"}`)
-          .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "⌨️ Programming").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
-        if (!filterdisabled || settings.PROGRAMMING || settings.showdisabled) embeds.push(embed10)
-
+     
         //Ranking
         var embed11 = new MessageEmbed()
           .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "📈 Ranking").size}\`] 📈 Ranking Commands 📈 | ${settings.RANKING ? "✔️  ENABLED" : "❌ DISABLED"}`)
           .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "📈 Ranking").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
           .addField("\u200b", "__**Sub-Categorized Commands:**__")
-          .addField("<:Builder:866089513654419466> **Manage Rank**", `> ${client.commands.filter((cmd) => cmd.category === "📈 Ranking" && cmd.type === "manage").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
+          .addField("**Manage Rank**", `> ${client.commands.filter((cmd) => cmd.category === "📈 Ranking" && cmd.type === "manage").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
           .addField("📈 **Rank Information**", `> ${client.commands.filter((cmd) => cmd.category === "📈 Ranking" && cmd.type === "info").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
         if (!filterdisabled || settings.RANKING || settings.showdisabled) embeds.push(embed11)
 
@@ -505,16 +461,6 @@ module.exports = {
           .addField("✔️   **Usage**", "> " + client.commands.filter((cmd) => cmd.category === "🎤 Voice").first().usage)
         if (!filterdisabled || settings.VOICE || settings.showdisabled) embeds.push(embed13)
 
-        //FUN COMMANDS
-        var embed14 = new MessageEmbed()
-          .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "🕹️ Fun").size}\`] 🕹️ Fun Commands 🕹️ | ${settings.FUN ? "✔️  ENABLED" : "❌ DISABLED"}`)
-          .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "🕹️ Fun").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
-          .addField("\u200b", "__**Sub-Categorized Commands:**__")
-          .addField("🙂 **Fun User Image Commands**", "> " + client.commands.filter((cmd) => cmd.category === "🕹️ Fun" && cmd.type === "user").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-          .addField("🙂💬 **Fun User Image-Text Commands**", "> " + client.commands.filter((cmd) => cmd.category === "🕹️ Fun" && cmd.type === "usertext").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-          .addField("💬 **Fun Text Commands**", "> " + client.commands.filter((cmd) => cmd.category === "🕹️ Fun" && cmd.type === "text").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲"))
-        if (!filterdisabled || settings.FUN || settings.showdisabled) embeds.push(embed14)
-
         //MINIGAMES
         var embed15 = new MessageEmbed()
           .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "🎮 MiniGames").size}\`] 🎮 Mini Games Commands 🎮 | ${settings.MINIGAMES ? "✔️  ENABLED" : "❌ DISABLED"}`)
@@ -527,11 +473,11 @@ module.exports = {
 
         //ANIME EMOTIONS
         var embed16 = new MessageEmbed()
-          .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "😳 Anime-Emotions").size}\`] 😳 Anime Commands 😳 | ${settings.ANIME ? "✔️  ENABLED" : "❌ DISABLED"}`)
-          .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "😳 Anime-Emotions").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
+          .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "😳 Fun").size}\`] 😳 Fun Commands 😳 | ${settings.ANIME ? "✔️  ENABLED" : "❌ DISABLED"}`)
+          .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "😳 §Fun-Commands").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
           .addField("\u200b", "__**Sub-Categorized Commands:**__")
-          .addField("😳 **Anime-Mention-Emotions (or Self.)**", `> ${client.commands.filter((cmd) => cmd.category === "😳 Anime-Emotions" && cmd.type === "mention").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
-          .addField("😳 **Anime-Self-Emotions**", `> ${client.commands.filter((cmd) => cmd.category === "😳 Anime-Emotions" && cmd.type === "self").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
+          .addField("😳 **Anime-Mention-Emotions (or Self.)**", `> ${client.commands.filter((cmd) => cmd.category === "😳 Fun-Commands" && cmd.type === "mention").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
+          .addField("😳 **Anime-Self-Emotions**", `> ${client.commands.filter((cmd) => cmd.category === "😳 Fun-Commands" && cmd.type === "self").sort((a, b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
         if (!filterdisabled || settings.ANIME || settings.showdisabled) embeds.push(embed16)
 
         //NSFW COMMANDS
@@ -547,7 +493,7 @@ module.exports = {
         var embed18 = new MessageEmbed()
           .setTitle(eval(client.la[ls]["cmds"]["info"]["help"]["variable23"]))
         let cuc = client.customcommands.get(message.guild.id, "commands");
-        if (cuc.length < 1) cuc = ["NO CUSTOM COMMANDS DEFINED YET, do it with: `!setup-customcommands`"]
+        if (cuc.length < 1) cuc = ["NO CUSTOM COMMANDS DEFINED YET, do it with: `{prefix}setup-customcommands`"]
         else cuc = cuc.map(cmd => `\`${cmd.name}\``)
         const items = cuc
         embed18.setTitle(eval(client.la[ls]["cmds"]["info"]["help"]["variable24"]))
@@ -574,12 +520,3 @@ module.exports = {
     }
   }
 }
-/**
- * @INFO
- * Bot Coded by Tomato#6966 | https://discord.gg/milrato
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention him / Milrato Development, when using this Code!
- * @INFO
- */

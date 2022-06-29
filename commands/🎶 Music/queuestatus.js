@@ -43,15 +43,15 @@ const { handlemsg } = require(`${process.cwd()}/handlers/functions`);
       embed.setDescription(eval(client.la[ls]["cmds"]["music"]["queuestatus"]["variable2"]))
       embed.addField(`${emoji?.msg.raise_volume} Volume`, `\`\`\`${player.volume}%\`\`\``, true)
       embed.addField(`${emoji?.msg.repeat_mode} Queue Length: `, `\`\`\`${player.queue.length} Songs\`\`\``, true)
-      embed.addField(`📨 Pruning: `, `\`\`\`${client.settings.get(message.guild.id, "playmsg") ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)
+      embed.addField(`📨 Pruning: `, `\`\`\`${client.settings.get(message.guild.id, "playmsg") ? `✅ Enabled` : `<:no:991003138108555284> Disabled`}\`\`\``, true)
 
-      embed.addField(`${emoji?.msg.autoplay_mode} Song Loop: `, `\`\`\`${player.trackRepeat ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)
-      embed.addField(`${emoji?.msg.autoplay_mode} Queue Loop: `, `\`\`\`${player.queueRepeat ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)
+      embed.addField(`${emoji?.msg.autoplay_mode} Song Loop: `, `\`\`\`${player.trackRepeat ? `✅ Enabled` : `<:no:991003138108555284>  Disabled`}\`\`\``, true)
+      embed.addField(`${emoji?.msg.autoplay_mode} Queue Loop: `, `\`\`\`${player.queueRepeat ? `✅ Enabled` : `<:no:991003138108555284>  Disabled`}\`\`\``, true)
       embed.addField(eval(client.la[ls]["cmds"]["music"]["queuestatus"]["variablex_3"]), eval(client.la[ls]["cmds"]["music"]["queuestatus"]["variable3"]), true)
 
       embed.addField(`${emoji?.msg.equalizer} Equalizer: `, `\`\`\`${player.get("eq")}\`\`\``, true)
       embed.addField(`🎛 Filter: `, `\`\`\`${player.get("filter")}\`\`\``, true)
-      embed.addField(`:clock1: AFK Mode`, `\`\`\`PLAYER: ${player.get("afk") ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)
+      embed.addField(`:clock1: AFK Mode`, `\`\`\`PLAYER: ${player.get("afk") ? `✅ Enabled` : `<:no:991003138108555284>  Disabled`}\`\`\``, true)
 
       embed.setColor(es.color)
 
@@ -72,12 +72,3 @@ const { handlemsg } = require(`${process.cwd()}/handlers/functions`);
   }
 };
 
-/**
- * @INFO
- * Bot Coded by Tomato#6966 | https://github?.com/Tomato6966/discord-js-lavalink-Music-Bot-erela-js
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention Him / Milrato Development, when using this Code!
- * @INFO
- */

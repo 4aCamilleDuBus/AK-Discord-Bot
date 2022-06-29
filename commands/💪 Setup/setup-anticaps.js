@@ -109,7 +109,7 @@ module.exports = {
             let SetupNumber = menu?.values[0].split(" ")[0]
             handle_the_picks(menuoptiondataIndex, SetupNumber, menuoptiondata)
           }
-          else menu?.reply({content: `❌ You are not allowed to do that ! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `<:no:991003138108555284> You are not allowed to do that ! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
@@ -188,7 +188,7 @@ module.exports = {
             return message.reply({embeds: [new Discord.MessageEmbed()
               .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-anticaps"]["variable12"]))
               .setColor(es.color)
-              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️ " : "❌"}\n\n**Percentage, of Message allowed to be in caps:** \`${thesettings.percent} %\``.substr(0, 2048))
+              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️ " : "<:no:991003138108555284>"}\n\n**Percentage, of Message allowed to be in caps:** \`${thesettings.percent} %\``.substr(0, 2048))
               .setFooter(client.getFooter(es))]}
             );
           }

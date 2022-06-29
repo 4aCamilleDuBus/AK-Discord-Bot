@@ -39,7 +39,7 @@ module.exports = {
         return message.reply({embeds: [new MessageEmbed()
           .setColor(es.wrongcolor)
           .setFooter(client.getFooter(es))
-          .setTitle(`❌ **This Role is not a DJ-Role!**`)
+          .setTitle(`<:no:991003138108555284>  **This Role is not a DJ-Role!**`)
         ]});
       //remove it from the Database
       client.settings.remove(message.guild.id, role.id, `djroles`);

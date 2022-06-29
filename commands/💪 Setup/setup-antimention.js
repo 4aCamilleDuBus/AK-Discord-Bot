@@ -28,7 +28,7 @@ module.exports = {
       
       
       //function to handle true/false
-      const d2p = (bool) => bool ? "`✔️ Enabled`" : "`❌ Disabled`"; 
+      const d2p = (bool) => bool ? "`✔️ Enabled`" : "`<:no:991003138108555284>  Disabled`"; 
       //call the first layer
       first_layer()
 
@@ -109,11 +109,11 @@ module.exports = {
             let SetupNumber = menu?.values[0].split(" ")[0]
             handle_the_picks(menuoptiondataIndex, SetupNumber, menuoptiondata)
           }
-          else menu?.reply({content: `❌ You are not allowed to do that ! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `<:no:991003138108555284>  You are not allowed to do that ! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:991003236276260894> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "<:no:991003138108555284>  **NOTHING SELECTED - CANCELLED**" }`})
         });
       }
 
@@ -187,7 +187,7 @@ module.exports = {
             return message.reply({embeds: [new Discord.MessageEmbed()
               .setTitle("The Settings of the Anti Mention System")
               .setColor(es.color)
-              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️" : "❌"}\n\n**Allowed Mentions / Message:** \`${thesettings.limit} Pings\``.substr(0, 2048))
+              .setDescription(`**Enabled:** ${thesettings.enabled ? "✔️" : "<:no:991003138108555284> "}\n\n**Allowed Mentions / Message:** \`${thesettings.limit} Pings\``.substr(0, 2048))
               .setFooter(client.getFooter(es))]}
             );
           } break;

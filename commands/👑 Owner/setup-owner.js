@@ -92,16 +92,16 @@ module.exports = {
         client.on('interactionCreate',  (menu) => {
           if (menu?.message.id === menumsg.id) {
             if (menu?.user.id === cmduser.id) {
-              if(used1) return menu?.reply({content : `❌> You already selected something, this Selection is now disabled!`, ephermal : true});
+              if(used1) return menu?.reply({content : `<:no:991003138108555284> > You already selected something, this Selection is now disabled!`, ephermal : true});
               menuselection(menu);
             }
-            else menu?.reply({content : `❌> You are not allowed to do that! Only: <@${cmduser.id}>`, ephermal : true});
+            else menu?.reply({content : `<:no:991003138108555284> > You are not allowed to do that! Only: <@${cmduser.id}>`, ephermal : true});
           }
         });
       }
 
-      const d2p = (bool) => bool ? "`✔️ Enabled`" : "`❌ Disabled`"; 
-      const d2p2 = (bool) => bool ? "`✔️ Yes`" : "`❌ Nope`"; 
+      const d2p = (bool) => bool ? "`✔️ Enabled`" : "`<:no:991003138108555284>  Disabled`"; 
+      const d2p2 = (bool) => bool ? "`✔️ Yes`" : "`<:no:991003138108555284>  Nope`"; 
 
       async function handle_the_picks(menuoptionindex, menuoptiondata) {
         switch (menuoptionindex) {
